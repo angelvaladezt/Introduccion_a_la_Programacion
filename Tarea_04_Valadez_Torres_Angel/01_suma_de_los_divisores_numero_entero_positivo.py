@@ -1,6 +1,6 @@
 #Angel Valadez Torres 1B
 #Ejercicio 1: Calculo de la suma de los divisores de un numero entero positivo
-#Documentacion: Este programa pide un numero entero positivo y calcula la suma de todos sus divisores menores o iguales a el, imprimiendo cada divisor y la suma de estos
+#Documentacion: Este programa nos pide un numero entero positivo y calcula la suma de todos sus divisores menores o iguales a el, imprimiendo cada divisor y la suma de estos
 
 suma = 0
 while True:    

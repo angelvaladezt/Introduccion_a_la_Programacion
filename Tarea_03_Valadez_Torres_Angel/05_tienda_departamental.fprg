@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="05_tienda_departamental"/>
+        <attribute name="authors" value="zacat"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-19 08:08:13 PM"/>
+        <attribute name="created" value="emFjYXQ7TEFQVE9QLUg1UDI4N1BDOzIwMjYtMDktMTk7MDc6MTE6MzcgUE07Mjg0NQ=="/>
+        <attribute name="edited" value="emFjYXQ7TEFQVE9QLUg1UDI4N1BDOzIwMjYtMDktMTk7MDg6MDg6MTMgUE07MTsyOTU0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="montoTotal, totalPagar, descuento" type="Real" array="False" size=""/>
+            <output expression="&quot;Monto total de la compra $:&quot;" newline="True"/>
+            <input variable="montoTotal"/>
+            <if expression="montoTotal &lt; 500.00">
+                <then>
+                    <assign variable="descuento" expression="0"/>
+                </then>
+                <else>
+                    <if expression="montoTotal&lt;1000.00">
+                        <then>
+                            <assign variable="descuento" expression="0.05"/>
+                        </then>
+                        <else>
+                            <if expression="montoTotal&lt;7000.00">
+                                <then>
+                                    <assign variable="descuento" expression="0.10"/>
+                                </then>
+                                <else>
+                                    <if expression="montoTotal&lt;15000.00">
+                                        <then>
+                                            <assign variable="descuento" expression="0.15"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="descuento" expression="0.25"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="totalPagar" expression="montoTotal - (montoTotal * descuento)"/>
+            <output expression="&quot;El total a pagar incluyendo el descuento es $: &quot; &amp; Int(totalPagar * 100 + 0.5) / 100" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

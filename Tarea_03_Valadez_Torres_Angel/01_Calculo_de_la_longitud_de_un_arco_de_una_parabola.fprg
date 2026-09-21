@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="01_Calculo_de_la_longitud_de_un_arco_de_una_parabola"/>
+        <attribute name="authors" value="zacat"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-19 05:07:42 PM"/>
+        <attribute name="created" value="emFjYXQ7TEFQVE9QLUg1UDI4N1BDOzIwMjYtMDktMTk7MDQ6MDU6NDIgUE07Mjg0MQ=="/>
+        <attribute name="edited" value="emFjYXQ7TEFQVE9QLUg1UDI4N1BDOzIwMjYtMDktMTk7MDU6MDc6NDIgUE07MTsyOTUy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="H, W, X, S" type="Real" array="False" size=""/>
+            <output expression="&quot;Ingrese la altura:&quot;" newline="True"/>
+            <input variable="H"/>
+            <output expression="&quot;Ingrese el ancho:&quot;" newline="True"/>
+            <input variable="W"/>
+            <if expression="H &gt; 0 and W &gt; 0">
+                <then>
+                    <assign variable="X" expression="H / W"/>
+                    <assign variable="S" expression="2 * W *(sqrt(X^2 + 1/16) + (1/(16*X))* (ln(X + sqrt(X^2 + 1/16))+ln(4)))"/>
+                    <output expression="&quot;La longitud del arco es: &quot; &amp; ToFixed(S, 4)" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Error: La altura y el ancho deben ser mayores a 0.&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="04_serie_de_Maclaurin"/>
+        <attribute name="authors" value="zacat"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-20 10:51:55 AM"/>
+        <attribute name="created" value="emFjYXQ7TEFQVE9QLUg1UDI4N1BDOzIwMjYtMDktMjA7MTA6MTI6MTAgQU07MjgwOA=="/>
+        <attribute name="edited" value="emFjYXQ7TEFQVE9QLUg1UDI4N1BDOzIwMjYtMDktMjA7MTA6NTE6NTUgQU07MTsyOTI4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, i" type="Integer" array="False" size=""/>
+            <declare name="x, termino, logaritmo" type="Real" array="False" size=""/>
+            <assign variable="logaritmo" expression="0"/>
+            <do expression="x &lt;= -1 or x &gt;= 1">
+                <output expression="&quot;Teclee argumento x?&quot;" newline="True"/>
+                <input variable="x"/>
+                <if expression="x &lt;= -1 or x &gt;= 1">
+                    <then>
+                        <output expression="&quot;Error, valor de x inv&#225;lido&quot;" newline="True"/>
+                    </then>
+                    <else/>
+                </if>
+            </do>
+            <do expression="n &lt;= 0">
+                <output expression="&quot;Hasta cuantos t&#233;rminos de la serie?&quot;" newline="True"/>
+                <input variable="n"/>
+            </do>
+            <for variable="i" start="1" end="n" direction="inc" step="1">
+                <assign variable="termino" expression="((-1) ^ (i - 1)) / i * (x ^ i)"/>
+                <assign variable="logaritmo" expression="logaritmo + termino"/>
+            </for>
+            <output expression="&quot;ln(1+x) = &quot; &amp; ToFixed(Int(logaritmo * 1000000) / 1000000, 6)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

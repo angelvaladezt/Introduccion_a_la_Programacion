@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="03_producto_de_Wallis"/>
+        <attribute name="authors" value="zacat"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-19 10:30:43 PM"/>
+        <attribute name="created" value="emFjYXQ7TEFQVE9QLUg1UDI4N1BDOzIwMjYtMDktMTk7MDk6NDU6MzEgUE07Mjg0OA=="/>
+        <attribute name="edited" value="emFjYXQ7TEFQVE9QLUg1UDI4N1BDOzIwMjYtMDktMTk7MTA6MzA6NDMgUE07MTsyOTQ1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="terminos, k, i, numerador, denominador" type="Integer" array="False" size=""/>
+            <declare name="termino, piMedios, valorPi" type="Real" array="False" size=""/>
+            <assign variable="piMedios" expression="1"/>
+            <do expression="terminos &lt;=0">
+                <output expression="&quot;Numero de terminos? &quot;" newline="True"/>
+                <input variable="terminos"/>
+                <if expression="terminos &lt;= 0">
+                    <then>
+                        <output expression="&quot;Error, el numero debe ser mayor que 0&quot;" newline="True"/>
+                    </then>
+                    <else/>
+                </if>
+            </do>
+            <for variable="k" start="1" end="terminos" direction="inc" step="1">
+                <assign variable="i" expression="(k+1) / 2"/>
+                <if expression="k MOD 2 = 0">
+                    <then>
+                        <assign variable="denominador" expression="(2*i) + 1"/>
+                    </then>
+                    <else>
+                        <assign variable="denominador" expression="(2*i)-1"/>
+                    </else>
+                </if>
+                <assign variable="numerador" expression="2*i"/>
+                <assign variable="termino" expression="numerador / denominador"/>
+                <assign variable="piMedios" expression="piMedios * termino"/>
+            </for>
+            <assign variable="valorPi" expression="piMedios*2"/>
+            <if expression="valorPi==Int(valorPi)">
+                <then>
+                    <output expression="&quot;Valor aproximado de pi = &quot; &amp; Int(valorPi)" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Valor aproximado de pi = &quot; &amp; ToFixed (valorPi, 4)" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

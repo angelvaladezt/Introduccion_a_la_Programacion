@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="02_serie_de_una_funcion"/>
+        <attribute name="authors" value="zacat"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-19 09:38:13 PM"/>
+        <attribute name="created" value="emFjYXQ7TEFQVE9QLUg1UDI4N1BDOzIwMjYtMDktMTk7MDk6MDE6MDYgUE07Mjg0Mg=="/>
+        <attribute name="edited" value="emFjYXQ7TEFQVE9QLUg1UDI4N1BDOzIwMjYtMDktMTk7MDk6Mzg6MTMgUE07MTsyOTU4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero, x, fx" type="Integer" array="False" size=""/>
+            <assign variable="fx" expression="0"/>
+            <do expression="numero &lt;=0">
+                <output expression="&quot;Dame un numero: &quot;" newline="True"/>
+                <input variable="numero"/>
+            </do>
+            <output expression="&quot;Segun la funcion, la serie es: &quot;" newline="False"/>
+            <output expression="fx &amp; &quot; &quot;" newline="False"/>
+            <for variable="x" start="1" end="numero" direction="inc" step="1">
+                <assign variable="fx" expression="(2*fx)+(x*x)"/>
+                <output expression="fx &amp; &quot; &quot;" newline="False"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

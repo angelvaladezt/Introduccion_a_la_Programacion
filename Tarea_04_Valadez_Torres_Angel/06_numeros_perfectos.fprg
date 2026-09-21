@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="06_numeros_perfectos"/>
+        <attribute name="authors" value="zacat"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-20 01:09:29 PM"/>
+        <attribute name="created" value="emFjYXQ7TEFQVE9QLUg1UDI4N1BDOzIwMjYtMDktMjA7MTE6NTU6MTAgQU07MjgxNg=="/>
+        <attribute name="edited" value="emFjYXQ7TEFQVE9QLUg1UDI4N1BDOzIwMjYtMDktMjA7MDE6MDk6MjkgUE07MTsyOTQ3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero, suma, i" type="Integer" array="False" size=""/>
+            <do expression="numero != 0">
+                <output expression="&quot;Dame un n&#250;mero para verificar si es perfecto: &quot;" newline="True"/>
+                <input variable="numero"/>
+                <if expression="numero == 0">
+                    <then>
+                        <output expression="&quot;Fin de algoritmo&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="numero &lt; 0">
+                            <then>
+                                <output expression="&quot;El &quot; &amp; numero &amp; &quot; no es positivo&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <assign variable="suma" expression="0"/>
+                                <for variable="i" start="1" end="numero - 1" direction="inc" step="1">
+                                    <if expression="numero MOD i == 0">
+                                        <then>
+                                            <assign variable="suma" expression="suma + i"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </for>
+                                <if expression="suma == numero">
+                                    <then>
+                                        <output expression="&quot;El &quot; &amp; numero &amp; &quot; s&#237; es perfecto&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;El &quot; &amp; numero &amp; &quot; no es perfecto&quot;" newline="True"/>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </do>
+        </body>
+    </function>
+</flowgorithm>

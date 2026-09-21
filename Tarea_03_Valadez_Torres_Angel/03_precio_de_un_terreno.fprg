@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="03_precio_de_un_terreno"/>
+        <attribute name="authors" value="zacat"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-19 05:58:50 PM"/>
+        <attribute name="created" value="emFjYXQ7TEFQVE9QLUg1UDI4N1BDOzIwMjYtMDktMTk7MDU6Mjk6NDQgUE07Mjg1MA=="/>
+        <attribute name="edited" value="emFjYXQ7TEFQVE9QLUg1UDI4N1BDOzIwMjYtMDktMTk7MDU6NTg6NTAgUE07MTsyOTU3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="largo, ancho, precioM2, area, descuento, precio" type="Real" array="False" size=""/>
+            <output expression="&quot;Ingresa el largo del terreno: &quot;" newline="True"/>
+            <input variable="largo"/>
+            <output expression="&quot;Ingresa el ancho del terreno:&quot;" newline="True"/>
+            <input variable="ancho"/>
+            <output expression="&quot;Ingrese precio por metro cuadrado del terreno $: &quot;" newline="True"/>
+            <input variable="precioM2"/>
+            <assign variable="area" expression="largo*ancho"/>
+            <if expression="area &gt; 1000">
+                <then>
+                    <assign variable="descuento" expression="0.25"/>
+                </then>
+                <else>
+                    <if expression="area &gt; 500">
+                        <then>
+                            <assign variable="descuento" expression="0.17"/>
+                        </then>
+                        <else>
+                            <assign variable="descuento" expression="0"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="precio" expression="(area * precioM2) * (1 - descuento)"/>
+            <output expression="&quot;Precio del terreno es: $ &quot; &amp; precio" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

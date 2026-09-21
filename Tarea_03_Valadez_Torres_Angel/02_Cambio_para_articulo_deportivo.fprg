@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="02_Cambio_para_articulo_deportivo"/>
+        <attribute name="authors" value="zacat"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-19 05:23:25 PM"/>
+        <attribute name="created" value="emFjYXQ7TEFQVE9QLUg1UDI4N1BDOzIwMjYtMDktMTk7MDU6MDc6NTYgUE07Mjg0OQ=="/>
+        <attribute name="edited" value="emFjYXQ7TEFQVE9QLUg1UDI4N1BDOzIwMjYtMDktMTk7MDU6MjM6MjUgUE07MTsyOTUx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="costo, pago, cambio" type="Real" array="False" size=""/>
+            <output expression="&quot;Dame el costo del articulo deportivo:&quot;" newline="True"/>
+            <input variable="costo"/>
+            <output expression="&quot;Dame el pago del cliente:&quot;" newline="True"/>
+            <input variable="pago"/>
+            <if expression="pago &gt;= costo">
+                <then>
+                    <assign variable="cambio" expression="pago - costo"/>
+                    <output expression="&quot;El cambio es: &quot;&amp; cambio" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Con esa cantidad no se alcanza a pagar&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

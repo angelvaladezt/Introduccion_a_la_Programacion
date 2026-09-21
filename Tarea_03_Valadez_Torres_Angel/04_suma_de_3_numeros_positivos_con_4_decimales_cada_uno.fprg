@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="04_suma_de_3_numeros_positivos_con_4_decimales_cada_uno"/>
+        <attribute name="authors" value="zacat"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-19 06:56:56 PM"/>
+        <attribute name="created" value="emFjYXQ7TEFQVE9QLUg1UDI4N1BDOzIwMjYtMDktMTk7MDY6MDg6MzYgUE07Mjg0OQ=="/>
+        <attribute name="edited" value="emFjYXQ7TEFQVE9QLUg1UDI4N1BDOzIwMjYtMDktMTk7MDY6NTY6NTYgUE07MTsyOTYy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n1, n2, n3, ent1, ent2, ent3, dec1, dec2, dec3, suma1, suma2, suma3, mayor" type="Real" array="False" size=""/>
+            <output expression="&quot;Dame el numero n1:&quot;" newline="True"/>
+            <input variable="n1"/>
+            <output expression="&quot;Dame el numero n2:&quot;" newline="True"/>
+            <input variable="n2"/>
+            <output expression="&quot;Dame el numero n3:&quot;" newline="True"/>
+            <input variable="n3"/>
+            <if expression="n1 &gt; 0 and n2 &gt; 0 and n3 &gt; 0">
+                <then>
+                    <assign variable="ent1" expression="Int(n1)"/>
+                    <assign variable="dec1" expression="(n1 - ent1)*10000"/>
+                    <assign variable="suma1" expression="ent1+dec1"/>
+                    <assign variable="ent2" expression="Int(n2)"/>
+                    <assign variable="dec2" expression="(n2 - ent2) * 10000"/>
+                    <assign variable="suma2" expression="ent2+dec2"/>
+                    <assign variable="ent3" expression="Int(n3)"/>
+                    <assign variable="dec3" expression="(n3 - ent3) * 10000"/>
+                    <assign variable="suma3" expression="ent3 + dec3"/>
+                    <output expression="&quot;La suma resultante de n1 = &quot; &amp; ToFixed(suma1, 4)" newline="True"/>
+                    <output expression="&quot;La suma resultante de n2 = &quot; &amp; ToFixed(suma2, 4)" newline="True"/>
+                    <output expression="&quot;La suma resultante de n3 = &quot; &amp; ToFixed(suma3, 4)" newline="True"/>
+                    <if expression="suma1&gt;suma2">
+                        <then>
+                            <if expression="suma1&gt;suma3">
+                                <then>
+                                    <assign variable="mayor" expression="suma1"/>
+                                </then>
+                                <else>
+                                    <assign variable="mayor" expression="suma3"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="suma2&gt;suma3">
+                                <then>
+                                    <assign variable="mayor" expression="suma2"/>
+                                </then>
+                                <else>
+                                    <assign variable="mayor" expression="suma3"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <output expression="&quot;El valor de las sumas es &quot; &amp; ToFixed(mayor, 4)" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Alguno o varios de los numeros no son positivos&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
